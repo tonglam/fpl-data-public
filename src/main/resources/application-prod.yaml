@@ -1,0 +1,43 @@
+spring:
+  data:
+    redis:
+      host: ENC()
+      port:
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: -1
+      password: ENC()
+      timeout: 60000ms
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: ENC()
+    username: ENC()
+    password: ENC()
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 15
+      auto-commit: true
+      max-lifetime: 1200000
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 180000
+  mail:
+    host: ENC()
+    port:
+    username: ENC()
+    password: ENC()
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+jasypt:
+  encryptor:
+    password:
+server:
+  port:
+  address:
