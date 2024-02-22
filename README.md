@@ -3,6 +3,13 @@
 
 Data processing occurs in three scenarios: every day, match day, and every gameweek, implemented using Spring Boot schedules for these tasks.
 
+In the initial stages, the services in this project were originally designed within the **[FPL](https://github.com/tonglam/fpl-public)** project. 
+As the project expanded, these services were extracted and relocated to this dedicated project, a strategic move aimed at enhancing maintenance and scalability.
+
+Presently, these two projects operate independently, with **[Fpl-data](https://github.com/tonglam/fpl-data-public)** handling the tasks of fetching, cleaning, and transforming data, storing it in MySQL and Redis. 
+Concurrently, **[FPL](https://github.com/tonglam/fpl-public)** is responsible for delivering services to users. 
+This architectural setup has proven effective for over two years.
+
 # Tech Stack
 - **Java 20 + Spring Boot 3**
 - MySQL for data storage
