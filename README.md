@@ -56,5 +56,5 @@ The deployment process is as follows:
 
 There are primarily two projects utilizing this data:
 - **[FPL](https://github.com/tonglam/fpl-public)**: The backend project for the website and WeChat Mini Program *LetLetMe*. 
-It uses the data processed by **Fpl-data(https://github.com/tonglam/fpl-data-public)** to offer services for users to view their scoring, ranking, and summary reports for their Fantasy Premier League team.
+It uses the data processed by **[Fpl-data](https://github.com/tonglam/fpl-data-public)** to offer services for users to view their scoring, ranking, and summary reports for their Fantasy Premier League team.
 - **[TelegramBot](https://github.com/tonglam/telegramBot-public)**: A Java-based project that offers users the service to retrieve their FPL data via the Telegram bot *letletme*.
