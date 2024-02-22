@@ -1,5 +1,7 @@
 # Overall
-**[Fpl-data](https://github.com/tonglam/fpl-data-public)** fetches data from the *Fantasy Premier League* servers, cleans and transforms the data, and then stores it in MySQL and Redis. Data processing occurs in three scenarios: every day, match day, and every gameweek, implemented using Spring Boot schedules for these tasks.
+**[Fpl-data](https://github.com/tonglam/fpl-data-public)** fetches data from the *[Fantasy Premier League](https://fantasy.premierleague.com/)* servers, cleans and transforms the data, and then stores it in MySQL and Redis. 
+
+Data processing occurs in three scenarios: every day, match day, and every gameweek, implemented using Spring Boot schedules for these tasks.
 
 # Tech Stack
 - **Java 20 + Spring Boot 3**
@@ -14,12 +16,9 @@ Note: You may need to install Browser Extension to view the following mermaid di
 
 For Chrome: [Mermaid Previewer](https://chromewebstore.google.com/detail/oidjnlhbegipkcklbdfnbkikplpghfdl)
 
-# Architecture Diagram
-
 # Flow Diagram
 
 # Modules
-
 
 ## Service
 
@@ -57,5 +56,5 @@ The deployment process is as follows:
 
 There are primarily two projects utilizing this data:
 - **[FPL](https://github.com/tonglam/fpl-public)**: The backend project for the website and WeChat Mini Program *LetLetMe*. 
-- It uses the data processed by **Fpl-data** to offer services for users to view their scoring, ranking, and summary reports for their Fantasy Premier League team.
+It uses the data processed by **Fpl-data** to offer services for users to view their scoring, ranking, and summary reports for their Fantasy Premier League team.
 - **[TelegramBot](https://github.com/tonglam/telegramBot-public)**: A Java-based project that offers users the service to retrieve their FPL data via the Telegram bot *letletme*.
