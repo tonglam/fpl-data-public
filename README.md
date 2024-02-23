@@ -27,11 +27,17 @@ For Chrome: [Mermaid Previewer](https://chromewebstore.google.com/detail/oidjnlh
 
 # Modules
 
-## Service
-
 ## DB
+**MySQL** serves as the relational database for this project, and the [MyBatis_Plus](https://github.com/baomidou/mybatis-plus) framework is selected to augment the utilization of MyBatis within the project. 
+For a detailed overview of the database structure, you can refer to the ER diagram provided in the [FPL project Readme](https://github.com/tonglam/fpl-public/blob/main/README.md).
 
 ## Caching
+This project primarily focuses on fetching, transforming, and persisting data, with less emphasis on querying through Restful API. 
+Consequently, a single-level caching approach is implemented for querying services instead of a two-level caching system.
+In this design, _Spring Cache_ like _Caffeine Cache_ is not utilized. 
+Instead, **Redis** is employed as the caching layer. 
+For data updated services, information is distributed to both **MySQL** and **Redis**. 
+Subsequently, querying services make use of **Redis** for caching purposes.
 
 ## Scheduled Task
 Spring Boot schedules prove effective for this project, and I opted not to introduce additional scheduling frameworks such as xxl-job, Quartz, or others to maintain simplicity.
@@ -110,6 +116,7 @@ The deployment process is as follows:
 - Jenkins publishes the built artifact to the server via **Plugin publish Over SSH**.
 
 # Designing Vital Services
+
 
 # Who use it?
 [Fpl-data](https://github.com/tonglam/fpl-data-public) provides the ability to fetch transformed and cleaned Fantasy Premier League data.
