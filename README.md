@@ -91,7 +91,7 @@ Reports are generated for each tournament after every gameweek, showcasing the r
 These reports play a crucial role in data analysis and visualization for users.
 
 ## DB
-**MySQL** serves as the relational database for this project, and the [MyBatis_Plus](https://github.com/baomidou/mybatis-plus) framework is selected to augment the utilization of MyBatis within the project.
+**MySQL** serves as the relational database for this project, and the [MyBatis_Plus](https://github.com/baomidou/mybatis-plus) framework is selected to augment the utilisation of MyBatis within the project.
 For a detailed overview of the database structure, you can refer to the ER diagram provided in the [FPL project Readme](https://github.com/tonglam/fpl-public/blob/main/README.md).
 
 ## AOP
@@ -99,7 +99,7 @@ The usage of AOP in the project is to log the service behaviors without modifyin
 
 ## Logging
 To facilitate better maintenance, the logging in the project is designed to be flexible and user-friendly. 
-The project utilizes **Logback** as the logging framework and **Slf4j** as the logging facade. 
+The project utilises **Logback** as the logging framework and **Slf4j** as the logging facade. 
 The logback configuration file, *logback-spring.xml*, is located in the resources folder and is tailored for flexibility and ease of use.
 
 Logs are separated into three files:
@@ -118,7 +118,7 @@ The deployment process is as follows:
 # Who use it?
 [Fpl-data](https://github.com/tonglam/fpl-data-public) provides the ability to fetch transformed and cleaned Fantasy Premier League data.
 
-There are primarily two projects utilizing this data:
+There are primarily two projects utilising this data:
 - **[FPL](https://github.com/tonglam/fpl-public)**: The backend project for the website and WeChat Mini Program *LetLetMe*. 
 It uses the data processed by **[Fpl-data](https://github.com/tonglam/fpl-data-public)** to offer services for users to view their scoring, ranking, and summary reports for their Fantasy Premier League team.
 - **[TelegramBot](https://github.com/tonglam/telegramBot-public)**: A Java-based project that offers users the service to retrieve their FPL data via the Telegram bot *letletme*.
