@@ -11,13 +11,13 @@ while **[FPL](https://github.com/tonglam/fpl-public)** is responsible for delive
 This architectural setup has proven effective for over two years.
 
 # Tech Stack
-- **Java 20 + Spring Boot 3**
-- MySQL for data storage
-- Redis for caching
-- Maven for build and dependency management
-- Logback for logging
-- Jasypt for encryption and decryption of sensitive data
-- Jenkins for CI/CD
+- **[Java 20](https://www.java.com/en/)** + **[Spring Boot 3](https://spring.io/projects/spring-boot)**
+- **[MySQL](https://www.mysql.com/)** for data storage
+- **[Redis](https://redis.io/)** for caching
+- **[Maven](https://maven.apache.org/)** for build and dependency management
+- **[Logback](https://github.com/qos-ch/logback)** for logging
+- **[Jasypt](https://github.com/ulisesbocchio/jasypt-spring-boot)** for encryption and decryption of sensitive data
+- **[Jenkins](https://www.jenkins.io/)** for CI/CD
 
 # Fetch Data Diagram
 
