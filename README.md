@@ -34,13 +34,66 @@ For Chrome: [Mermaid Previewer](https://chromewebstore.google.com/detail/oidjnlh
 ## Caching
 
 ## Scheduled Task
+Spring Boot schedules prove effective for this project, and I opted not to introduce additional scheduling frameworks such as xxl-job, Quartz, or others to maintain simplicity.
+
+### Daily Task
+These tasks handle the data that needs to be fetched and processed every day.
+
+#### Event Task
+Given that the Premier League may adjust the schedule at any time during the season, the event data needs daily updates to ensure alignment with the real schedule in the database.
+
+#### Player Value Task
+One of the most important components of the _FPL_ game is the player's value, which affects the strategy of playing the game massively. 
+The player value will be updated at 9:30 am BST, so the purpose of this task is to fetch the changing of the player value in time and show to the user.
+
+#### Player Value Info Task
+Simultaneously with the player value update, the player value info is also refreshed. 
+This information includes the likelihood of playing in the next round, transfer in and out numbers, and more.
+
+#### Player Stat Task
+Player stats, such as goals, assists, and clean sheets, are updated daily.
+
+#### Entry Info Task
+As _FPL_ allows players to change their team name and username, this task ensures the accurate representation of this information in the database, maintaining synchronization with real data.
+
+#### Tournament Info Task
+Tournaments in _LetLetMe_ allow users to establish custom tournaments to compete with friends. 
+This task updates tournament information, accommodating changes in basic details.
+
+### Match Day Task
+These tasks manage data changes during match days, primarily focusing on data dependent on match results
+
+#### Event Live Task
+Among the critical tasks in the project, the Event Live Task provides real-time data for every player in the event. 
+This data encompasses the player's points, minutes played, goals, assists, and more. 
+It forms the basis for calculating live scores for each user's FPL team, contributing to live scores and rankings within their respective tournaments. 
+Due to server limitations, the update period for this task is set to 5 minutes, deviating from the real-time updates during actual matches.
+
+#### Event Live Summary Task
+The Event Live Summary task consolidates player event live stats from gameweek 1 to the current gameweek into a single record.
+
+#### Event Live Explain Task
+The Event Live Explain Task offers detailed insights into a player's live event data, explaining how they accumulated points. This includes information on playing minutes, goals, assists, clean sheets, and more.
+
+#### Event Overall Result Task
+This task updates the overall results of the event, encompassing highest scores, chips played, most-captained players, most-transferred players in the event, and more.
+
+### Gameweek Tournament Task
+These tasks are designed to update the tournaments results for every player in the tournaments after every match day, including:
+- player's points, ranking details
+- player's picks, chips played, starting XI, and captain
+- player's transfers, hits, and additional details
+
+### Gameweek Report Task
+Reports are generated for each tournament after every gameweek, showcasing the ranking, points, and other relevant details. 
+These reports play a crucial role in data analysis and visualization for users.
 
 ## AOP
 The usage of AOP in the project is to log the service behaviors without modifying the business logic.
 
 ## Logging
 To facilitate better maintenance, the logging in the project is designed to be flexible and user-friendly. 
-The project utilizes **logback** as the logging framework and **slf4j** as the logging facade. 
+The project utilizes **Logback** as the logging framework and **Slf4j** as the logging facade. 
 The logback configuration file, *logback-spring.xml*, is located in the resources folder and is tailored for flexibility and ease of use.
 
 Logs are separated into three files:
