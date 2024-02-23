@@ -56,7 +56,7 @@ This information includes the likelihood of playing in the next round, transfer 
 Player stats, such as goals, assists, and clean sheets, are updated daily.
 
 #### Entry Info Task
-As _FPL_ allows players to change their team name and username, this task ensures the accurate representation of this information in the database, maintaining synchronization with real data.
+As _FPL_ allows players to change their team name and username, this task ensures the accurate representation of this information in the database, maintaining synchronisation with real data.
 
 #### Tournament Info Task
 Tournaments in _LetLetMe_ allow users to establish custom tournaments to compete with friends. 
@@ -88,14 +88,14 @@ These tasks are designed to update the tournaments results for every player in t
 
 ### Gameweek Report Task
 Reports are generated for each tournament after every gameweek, showcasing the ranking, points, and other relevant details. 
-These reports play a crucial role in data analysis and visualization for users.
+These reports play a crucial role in data analysis and visualisation for users.
 
 ## DB
 **MySQL** serves as the relational database for this project, and the [MyBatis_Plus](https://github.com/baomidou/mybatis-plus) framework is selected to augment the utilisation of MyBatis within the project.
 For a detailed overview of the database structure, you can refer to the ER diagram provided in the [FPL project Readme](https://github.com/tonglam/fpl-public/blob/main/README.md).
 
 ## AOP
-The usage of AOP in the project is to log the service behaviors without modifying the business logic.
+The usage of AOP in the project is to log the service behaviours without modifying the business logic.
 
 ## Logging
 To facilitate better maintenance, the logging in the project is designed to be flexible and user-friendly. 
