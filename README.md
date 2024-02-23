@@ -19,10 +19,6 @@ This architectural setup has proven effective for over two years.
 - Jasypt for encryption and decryption of sensitive data
 - Jenkins for CI/CD
 
-Note: You may need to install Browser Extension to view the following mermaid diagram.
-
-For Chrome: [Mermaid Previewer](https://chromewebstore.google.com/detail/oidjnlhbegipkcklbdfnbkikplpghfdl)
-
 # Fetch Data Diagram
 
 ```mermaid
