@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by tong on 2022/07/05
  */
-//@Component
+@Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class LaunchTask {
 
@@ -26,7 +26,7 @@ public class LaunchTask {
     @Scheduled(cron = "0 */1 * * * *")
     public void warning() {
         this.interfaceService.getBootstrapStatic().ifPresent(o -> {
-            if (o.getEvents().size() == 0) {
+            if (o.getEvents().isEmpty()) {
                 // send warning email
                 String msg = "【NEW SEASON】WARNING! WARNING! WARNING!";
                 NotifyUtils.notify(NotifyEnums.Telegram.getType(), msg, "");
@@ -39,8 +39,8 @@ public class LaunchTask {
     @Scheduled(cron = "0 */1 * * * *")
     public void happening() {
         this.interfaceService.getBootstrapStatic().ifPresent(o -> {
-            if (o.getEvents().size() != 0) {
-                if (StringUtils.equals("2024", o.getEvents().get(0).getDeadlineTime().substring(0, 4))) {
+            if (!o.getEvents().isEmpty()) {
+                if (StringUtils.equals("2025", o.getEvents().get(0).getDeadlineTime().substring(0, 4))) {
                     // send happening email
                     String msg = "【NEW SEASON】ITS HAPPENING!!!";
                     NotifyUtils.notify(NotifyEnums.Telegram.getType(), msg, "");
